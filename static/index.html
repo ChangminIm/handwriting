@@ -1,0 +1,54 @@
+<!-- Created: 2026-02-25 00:00 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>손글씨 숫자 인식기</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>손글씨 숫자 인식기</h1>
+      <p class="subtitle">검은 캔버스에 마우스로 숫자(0–9)를 그려보세요</p>
+    </header>
+
+    <main>
+      <!-- Drawing canvas -->
+      <div class="canvas-wrapper">
+        <canvas id="canvas" width="280" height="280"></canvas>
+      </div>
+
+      <!-- Buttons -->
+      <div class="btn-row">
+        <button id="clearBtn" class="btn btn-clear">지우기</button>
+        <button id="recognizeBtn" class="btn btn-recognize">인식하기</button>
+      </div>
+
+      <!-- Prediction result -->
+      <div class="result-card">
+        <div class="result-left">
+          <span class="result-lbl">예측 숫자</span>
+          <span id="predDigit" class="pred-digit">–</span>
+        </div>
+        <div class="result-right">
+          <span class="result-lbl">신뢰도</span>
+          <span id="predConf" class="pred-conf">–</span>
+        </div>
+      </div>
+
+      <!-- Per-digit probability bars -->
+      <div class="bars-card">
+        <div class="bars-title">각 숫자별 확률</div>
+        <div id="barsContainer" class="bars-list"></div>
+      </div>
+
+      <!-- Status -->
+      <div id="status" class="status">준비 완료</div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
